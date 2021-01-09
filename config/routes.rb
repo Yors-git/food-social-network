@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'opinions/index'
+  get 'opinions/new'
+  get 'opinions/create'
+  get 'opinions/show'
+  get 'opinions/edit'
+  get 'opinions/update'
+  get 'opinions/destroy'
   get 'users/index'
   get 'users/new'
   get 'users/create'
