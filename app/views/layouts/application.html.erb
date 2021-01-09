@@ -3,23 +3,49 @@
   <head>
     <title>FoodSocialNetwork</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <%= favicon_link_tag asset_path('eat-flat-1.png') %>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'left_nav_styles' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <nav class="navbar navbar-dark bg-primary">
+    <!-- left navigation -->
+    <div class="sidenav">
+      <div class="current-user">
+        <img src="/assets/SNPhoto.jpg" alt="profile picture">
+        <span>Jorge Torres</span>
+      </div>
+      <div class="stats flex">
+        <span>
+          <p>184</p>
+          <p>followers</p>
+        </span>
+        <span>
+          <p>200</p>
+          <p>following</p>
+        </span>
+      </div>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <nav class="navbar navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
+          <img src="/assets/eat-flat-1.png" alt="fork spoon logo" width="30" height="30">
         </a>
       </div>
     </nav>
-    <%= yield %>
+    <div class="main">
+      <%= yield %>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>
 </html>
