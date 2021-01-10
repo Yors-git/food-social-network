@@ -1,4 +1,6 @@
 class OpinionsController < ApplicationController
+  include ApplicationHelper
+  before_action :set_opinion, only: [:show, :edit, :update, :destroy]
   def index 
     @opinions = Opinion.all.order("created_at DESC")
     @opinion = Opinion.new
@@ -9,7 +11,7 @@ class OpinionsController < ApplicationController
   end
 
   def create
-    @opinion = current_user.opinions.build(tweeet_params)
+    @opinion = current_user.opinions.build(opinion_params)
 
     respond_to do |format|
       if @opinion.save
@@ -29,4 +31,13 @@ class OpinionsController < ApplicationController
   def update; end
 
   def destroy; end
+
+  private
+    def set_opinion
+      @opinion = Opinion.find(params[:id])
+    end
+
+    def opinion_params
+      params.require(:opinion).permit(:text)
+    end
 end

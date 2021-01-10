@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'delete', to: 'sessions#destroy'
+  get 'welcome', to: 'sessions#welcome'
   resources :users
   resources :opinions
 
