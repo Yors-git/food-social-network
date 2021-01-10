@@ -1,6 +1,3 @@
-.flex {
-  display: flex;
-}
 /* Style nav  */
 nav {
   margin-left: 190px; /* Same as the width of the sidebar */
@@ -36,6 +33,10 @@ nav {
 }
 
 /* Profile Picture, Name, Stats  */
+.flex {
+  display: flex;
+}
+
 .current-user {
   padding: 0 1rem;
 }
