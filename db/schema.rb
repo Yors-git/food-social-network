@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_173236) do
+ActiveRecord::Schema.define(version: 2021_01_10_193100) do
 
   create_table "opinions", force: :cascade do |t|
-    t.integer "authorid"
     t.string "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

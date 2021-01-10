@@ -5,6 +5,14 @@ nav {
   background-color: rgb(77, 166, 224);
 }
 
+nav ul li a {
+  color: rgb(32, 51, 69);
+}
+
+nav ul li a:hover {
+  color: #f1f1f1;
+}
+
 /* The sidebar menu */
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */

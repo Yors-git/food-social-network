@@ -37,16 +37,14 @@
     </div>
 
     <nav class="navbar navbar-dark">
-      <div class="container">
+      <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="/assets/eat-flat-1.png" alt="fork spoon logo" width="30" height="30">
         </a>
+        <ul class="nav justify-content-end">
+          <%= check_signed_in %> 
+        </ul>
       </div>
-      <ul class="navbar-nav ml-auto">
-
-        <%= check_signed_in %> 
-
-      </ul>
     </nav>
     <div class="main">
       <%= yield %>

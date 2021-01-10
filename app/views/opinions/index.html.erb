@@ -3,6 +3,6 @@
 <h4 class="mt-4">Latest Reviews:</h4>
 <ul><br>
   <% @opinions.each do |op| %>
-    <li><%= op.text %> by: <%= op.authorid%></li>
+    <li><%= op.text %> by: <%= op.author.username%></li>
   <% end %>
 </ul>
