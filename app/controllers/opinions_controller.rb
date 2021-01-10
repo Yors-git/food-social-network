@@ -38,6 +38,6 @@ class OpinionsController < ApplicationController
     end
 
     def opinion_params
-      params.require(:opinion).permit(:text)
+      params.require(:opinion).permit(:id, :text, :authorid, :user_id)
     end
 end

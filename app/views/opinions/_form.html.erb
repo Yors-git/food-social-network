@@ -6,6 +6,7 @@
   </ul>
 
   <div class="mb-3">
+    <%#= f.hidden_field :authorid, value: params(user_id)%>
     <label for="text" class="form-label">New dish review:</label>
     <%= f.text_field :text, placeholder: 'Write new review', class: 'form-control' %>
   </div>
