@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :destroy, :who_to_follow]
+  skip_before_action :require_login, only: [:new, :create, :destroy]
 
   def index 
     @users = User.all
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       flash.notice = "User #{@user[:username]} Created!"
       session[:user_id] = @user.id
-      redirect_to 'root'
+      redirect_to '/welcome'
     else
       render :new
     end

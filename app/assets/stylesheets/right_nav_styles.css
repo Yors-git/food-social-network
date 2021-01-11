@@ -1,0 +1,28 @@
+.right-panel {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 260px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 3.625rem; /* Stay at the top */
+  right: 0;
+  background-color: rgb(245, 246, 248); /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.right-panel h3 {
+  padding: 6px 8px 6px 16px;
+}
+
+.right-panel a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.right-panel a:hover {
+  color: rgb(32, 51, 69);
+}

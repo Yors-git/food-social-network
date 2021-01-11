@@ -76,5 +76,6 @@ nav ul li a:hover {
 /* Style main container */
 .main {
   margin-left: 190px;
+  margin-right: 260px;
   padding: 1rem;
 }

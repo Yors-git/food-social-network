@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_193100) do
+ActiveRecord::Schema.define(version: 2021_01_10_212132) do
+
+  create_table "followships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "follower_id"
+    t.boolean "blocked"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follower_id"], name: "index_followships_on_follower_id"
+    t.index ["user_id"], name: "index_followships_on_user_id"
+  end
 
   create_table "opinions", force: :cascade do |t|
     t.string "text"
@@ -29,5 +39,7 @@ ActiveRecord::Schema.define(version: 2021_01_10_193100) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "followships", "users"
+  add_foreign_key "followships", "users", column: "follower_id"
   add_foreign_key "opinions", "users", column: "author_id"
 end
