@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'right_nav_styles' %>
+<%= stylesheet_link_tag 'homepage_styles' %>
 
 <div class="right-panel">
       <div class="current-user">
@@ -16,10 +16,19 @@
         </span>
       </div>
       <h3>Who to follow</h3>
-      <ul><% @not_followed_users.each do |usr| %>
+      <ul class="opinions-feed"><% @not_followed_users.each do |usr| %>
         <li>
-          <%#= link_to usr.username, user_path(usr.id) %>
-          <%= usr.username %>
+          <div class="container mt-3 px-0">
+            <div class="d-flex p-1 mx-2">
+              <img src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png" alt="John Doe"
+              class="mr-2 mt-0" style="width:20px;height:20px;">
+              <div>
+                  <%#= link_to usr.username, user_path(usr.id) %>
+                  <p class="px-2 mb-0"><%= usr.username %></p>
+              </div>
+            </div>
+          </div>
+
         </li>
         <% end %>
       </ul>
@@ -28,8 +37,19 @@
 <h1>Food Reviews</h1>
 <%= render 'form' %> 
 <h4 class="mt-4">Latest Reviews:</h4>
-<ul><br>
+<ul class="opinions-feed">
   <% @opinions.each do |op| %>
-    <li><%= op.text %> by: <%= op.author.username%></li>
+    <li>
+      <div class="container mt-3 px-0">
+        <div class="d-flex border p-3 my-1">
+            <img src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png" alt="John Doe"
+                class="mr-2 mt-2" style="width:60px;height:60px;">
+            <div>
+                <h4 class="px-2"><%= op.author.username %></h4>
+                <p class="px-2 mb-0"><%= op.text %></p>
+            </div>
+        </div>
+      </div>
+    </li>
   <% end %>
 </ul>
