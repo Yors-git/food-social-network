@@ -15,8 +15,7 @@
   </div>
   <div class="mb-3">
     <label for="photo" class="form-label">Profile Picture:</label>
-    <%#= f.file_field :photo, accept: 'image/png,image/jpeg', class: 'form-control' %>
-    <%= f.file_field :photo, direct_upload: true, class: 'form-control' %>
+    <%= f.file_field :photo, direct_upload: true, accept: 'image/png,image/jpeg', class: 'form-control' %>
   </div>
   <div class="mb-3">
     <label for="coverimage" class="form-label">Cover Image:</label>

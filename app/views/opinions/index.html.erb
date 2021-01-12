@@ -18,13 +18,14 @@
       <h3>Who to follow</h3>
       <ul class="opinions-feed"><% @not_followed_users.each do |usr| %>
         <li>
-          <div class="container mt-3 px-0">
+          <div class="container  px-0">
             <div class="d-flex p-1 mx-2">
-              <img src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png" alt="John Doe"
-              class="mr-2 mt-0" style="width:20px;height:20px;">
+              <div class="center_who_img">
+                <%= check_for_avatar(usr) %>
+              </div>
               <div>
                   <%#= link_to usr.username, user_path(usr.id) %>
-                  <p class="px-2 mb-0"><%= usr.username %></p>
+                  <p class="px-2 mb-0"><%= link_to usr.username, user_path(usr.id), class:'who_follow_link' %></p>
               </div>
             </div>
           </div>
@@ -42,11 +43,11 @@
     <li>
       <div class="container mt-3 px-0">
         <div class="d-flex border p-3 my-1">
-            <img src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png" alt="John Doe"
-                class="mr-2 mt-2" style="width:60px;height:60px;">
-            <%#= image_tag(url_for(current_user.photo), style:'width:50px;height:50px') %>
+            <div class="center_op_img">
+              <%= check_for_photo(op) %>
+            </div>
             <div>
-                <h4 class="px-2"><%= op.author.username %></h4>
+                <h4 class="px-2"><%= link_to op.author.username, user_path(op.author.id), class: 'op_user_link'%></h4>
                 <p class="px-2 mb-0"><%= op.text %></p>
             </div>
         </div>

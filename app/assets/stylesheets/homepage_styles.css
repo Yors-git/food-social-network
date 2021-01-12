@@ -3,6 +3,22 @@
   padding-left: 0;
 }
 
+.center_op_img {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.op_user_link {
+  text-decoration: none;
+  color: rgb(32, 51, 69);
+}
+
+.op_user_link:hover {
+  text-decoration: none;
+  color: #818181;
+}
+
 .right-panel {
   height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 260px; /* Set the width of the sidebar */
@@ -20,14 +36,21 @@
   padding: 6px 8px 6px 16px;
 }
 
-.right-panel a {
-  padding: 6px 8px 6px 16px;
+.who_follow_link {
+  padding: 0;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 1.25rem;
+  color: rgb(32, 51, 69);
   display: block;
 }
 
-.right-panel a:hover {
-  color: rgb(32, 51, 69);
+.who_follow_link:hover {
+  color: #818181;
+}
+
+.center_who_img {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

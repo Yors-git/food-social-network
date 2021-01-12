@@ -1,6 +1,14 @@
 class ApplicationController < ActionController::Base
   before_action :require_login
 
+  def current_user
+    User.find_by(id: session[:user_id])
+  end
+
+  def logged_in?
+    !current_user.nil?
+  end
+
   private
 
   def require_login

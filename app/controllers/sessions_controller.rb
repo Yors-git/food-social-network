@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create, :welcome, :destroy]
+  skip_before_action :require_login, only: [:new, :create, :destroy]
   def new; end
 
   def create
