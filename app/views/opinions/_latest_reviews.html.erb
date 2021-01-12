@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag 'homepage_styles' %>
+
+<h4 class="mt-4">Latest Reviews:</h4>
+<ul class="opinions-feed">
+  <% @opinions.each do |op| %>
+    <li>
+      <div class="container mt-3 px-0">
+        <div class="d-flex border p-3 my-1">
+          <div class="center_op_img">
+            <%= check_for_photo(op) %>
+          </div>
+          <div>
+            <h4 class="px-2">
+              <%= link_to op.author.username, user_path(op.author.id), class: 'op_user_link' %>
+            </h4>
+            <p class="px-2 mb-0">
+              <%= op.text %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <% end %>
+</ul>

@@ -6,5 +6,4 @@ class Opinion < ApplicationRecord
     followed_users_ids << user.id
     followed_users = User.where.not(id: followed_users_ids)
   end
-
 end

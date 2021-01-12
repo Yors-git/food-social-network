@@ -14,21 +14,9 @@
   </head>
 
   <body>
-    <!-- left navigation -->
-    <div class="sidenav">
-      <a href="#">All Users</a>
-    </div>
-
-    <nav class="navbar navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/opinions#index">
-          <img src="/assets/eat-flat-1.png" alt="fork spoon logo" width="30" height="30">
-        </a>
-        <ul class="nav justify-content-end">
-          <%= check_signed_in %> 
-        </ul>
-      </div>
-    </nav>
+    <%= render 'left_navigation' %>    
+    <%= render 'navbar' %>
+    
     <div class="main">
       <%= yield %>
     </div>
