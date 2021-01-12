@@ -44,6 +44,7 @@
         <div class="d-flex border p-3 my-1">
             <img src="https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png" alt="John Doe"
                 class="mr-2 mt-2" style="width:60px;height:60px;">
+            <%#= image_tag(url_for(current_user.photo), style:'width:50px;height:50px') %>
             <div>
                 <h4 class="px-2"><%= op.author.username %></h4>
                 <p class="px-2 mb-0"><%= op.text %></p>
