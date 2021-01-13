@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :destroy, :create_follower, :delete_follower]
   before_action :set_opinions, only: [:show, :destroy]
   skip_before_action :require_login, only: [:new, :create]
 
@@ -28,10 +28,19 @@ class UsersController < ApplicationController
   end
 
   def edit; end
-
   def update; end
-
   def destroy; end
+
+  def create_follower
+    Followship.create(user_id: @user.id, follower_id: current_user.id, blocked: false)
+    redirect_to request.referrer, notice: 'Followed!'
+  end
+
+  def delete_follower
+    @followship = Followship.where(follower_id: current_user.id, user_id: @user.id)
+    Followship.delete(@followship.first.id)
+    redirect_to request.referrer, notice: 'Unfollowed!'
+  end
 
   private
 

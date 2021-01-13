@@ -7,6 +7,9 @@
     </div>
     <span><%= @user.fullname %></span>
   </div>
+  <div class="fllw-btn">
+    <%= follow_user(@user, @followed_by) %>
+  </div>
   <div class="stats flex">
     <span>
       <p><%= @user.opinions.length %></p>

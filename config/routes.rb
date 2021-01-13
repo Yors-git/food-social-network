@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   delete 'delete', to: 'sessions#destroy'
   get 'welcome', to: 'sessions#welcome'
   resources :users
+  resources :users do
+    member do
+      get :create_follower
+      get :delete_follower
+    end
+  end
   resources :opinions
 
   root 'opinions#index'

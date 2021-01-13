@@ -26,5 +26,13 @@ module ApplicationHelper
     end
   end
 
-  
+  def follow_user(user, followed_by)
+    if user != current_user
+      if user.followed_by(user).include?(current_user)  
+        button_to 'Unfollow', delete_follower_user_path, method: :get, class: 'btn btn-danger'
+      else
+        button_to 'Follow', create_follower_user_path, method: :get, class: 'btn btn-secondary'
+      end
+    end
+  end
 end

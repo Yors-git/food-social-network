@@ -11,4 +11,10 @@ class User < ApplicationRecord
     followed_by_ids = user.followers.all.map { |fllr| fllr.follower_id if fllr.user_id == user.id }
     followed_by = User.where(id: followed_by_ids)
   end
+
+  def not_followed_users(user)
+    followed_users_ids = user.inverse_followers.all.map { |fllr| fllr.user_id if fllr.follower_id == user.id }
+    followed_users_ids << user.id
+    followed_users = User.where.not(id: followed_users_ids)
+  end
 end
