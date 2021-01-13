@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :followers, class_name: 'Followship', foreign_key: 'user_id'
   has_many :inverse_followers, class_name: 'Followship', foreign_key: 'follower_id'
 
+  validates :username, presence: true, length: { minimum: 3 }, uniqueness: true
+  validates :fullname, presence: true, length: { minimum: 5 }
+  validates :password, presence: true
+
   def followed_by(user)
     followed_by_ids = user.followers.all.map { |fllr| fllr.follower_id if fllr.user_id == user.id }
     followed_by = User.where(id: followed_by_ids)
