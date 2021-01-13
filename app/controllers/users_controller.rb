@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :destroy, :create_follower, :delete_follower]
-  before_action :set_opinions, only: [:show, :destroy]
-  skip_before_action :require_login, only: [:new, :create]
+  before_action :set_user, only: %i[show destroy create_follower delete_follower]
+  before_action :set_opinions, only: %i[show destroy]
+  skip_before_action :require_login, only: %i[new create]
 
-  def index 
+  def index
     @users = User.all
   end
 
-  def new 
+  def new
     @user = User.new
   end
 
@@ -22,13 +22,15 @@ class UsersController < ApplicationController
     end
   end
 
-  def show 
+  def show
     @user = User.find(params[:id])
     @followed_by = @user.followed_by(@user)
   end
 
   def edit; end
+
   def update; end
+
   def destroy; end
 
   def create_follower
@@ -47,9 +49,9 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-  
+
   def set_opinions
-    @opinions = Opinion.all.order("created_at DESC")
+    @opinions = Opinion.all.order('created_at DESC')
   end
 
   def user_params

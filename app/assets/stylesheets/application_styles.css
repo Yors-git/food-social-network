@@ -9,6 +9,14 @@ nav ul li a {
   color: rgb(32, 51, 69);
 }
 
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
 nav ul li a:hover {
   color: #f1f1f1;
 }
@@ -24,15 +32,6 @@ nav ul li a:hover {
   background-color: rgb(32, 51, 69); /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -61,8 +60,8 @@ nav ul li a:hover {
 }
 
 .current-user span {
-  white-space:nowrap;
-  overflow:hidden;
+  white-space: nowrap;
+  overflow: hidden;
   color: rgb(32, 51, 69);
 }
 

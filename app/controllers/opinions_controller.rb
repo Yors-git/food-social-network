@@ -1,10 +1,10 @@
 class OpinionsController < ApplicationController
   include ApplicationHelper
-  before_action :set_opinion, only: [:show, :edit, :update, :destroy]
-  def index 
-    @opinions = Opinion.all.order("created_at DESC")
+  before_action :set_opinion, only: %i[show edit update destroy]
+  def index
+    @opinions = Opinion.all.order('created_at DESC')
     @opinion = Opinion.new
-    @not_followed_users = @opinion.not_followed_users(current_user).order("created_at DESC")
+    @not_followed_users = @opinion.not_followed_users(current_user).order('created_at DESC')
   end
 
   def new
@@ -26,16 +26,20 @@ class OpinionsController < ApplicationController
   end
 
   def show; end
+
   def edit; end
+
   def update; end
+
   def destroy; end
 
   private
-    def set_opinion
-      @opinion = Opinion.find(params[:id])
-    end
 
-    def opinion_params
-      params.require(:opinion).permit(:id, :text, :authorid, :user_id)
-    end
+  def set_opinion
+    @opinion = Opinion.find(params[:id])
+  end
+
+  def opinion_params
+    params.require(:opinion).permit(:id, :text, :authorid, :user_id)
+  end
 end
