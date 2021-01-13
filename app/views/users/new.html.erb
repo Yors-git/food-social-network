@@ -1,3 +1,4 @@
+<div class="log-sign-padding">
 <h1>Sign Up</h1>
 <%= form_for @user do |f| %>
   <ul>
@@ -19,7 +20,8 @@
   </div>
   <div class="mb-3">
     <label for="coverimage" class="form-label">Cover Image:</label>
-    <%= f.file_field :coverimage, accept: 'image/png,image/jpeg', class: 'form-control' %>
+    <%= f.file_field :coverimage, direct_upload: true, accept: 'image/png,image/jpeg', class: 'form-control' %>
   </div>
   <%= f.submit class: 'btn btn-secondary' %>
 <% end %>
+</div>

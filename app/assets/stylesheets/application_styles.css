@@ -47,23 +47,27 @@ nav ul li a:hover {
 
 .current-user {
   padding: 0 1rem;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .current-user img {
   border-radius: 0.1rem;
-  width: 2.875rem;
   height: 3.125rem;
 }
 
+.center_prof_img {
+  width: 3.125rem;
+}
+
 .current-user span {
-  padding-left: 5px;
   white-space:nowrap;
   overflow:hidden;
-  color: #bdbdbd;
+  color: rgb(32, 51, 69);
 }
 
 .stats {
-  color: #bdbdbd;
+  color: rgb(32, 51, 69);
   justify-content: space-evenly;
   padding: 1rem 0;
 }
@@ -77,5 +81,24 @@ nav ul li a:hover {
 .main {
   margin-left: 190px;
   margin-right: 260px;
+  padding: 0;
+}
+
+.title-padding {
+  padding: 1rem 0 0 1rem;
+}
+
+.form-padding {
+  padding: 0 1rem;
+}
+
+.log-sign-padding {
   padding: 1rem;
+}
+
+.cover-image {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
 }

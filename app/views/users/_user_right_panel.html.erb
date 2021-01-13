@@ -1,11 +1,17 @@
 <%= stylesheet_link_tag 'homepage_styles' %>
 
 <div class="right-panel">
-  <div class="current-user">
-    <img src="/assets/SNPhoto.jpg" alt="profile picture">
-    <span>Jorge Torres</span>
+  <div class="current-user flex">
+    <div class="center_prof_img">
+      <%= check_profile_photo(@user)%>
+    </div>
+    <span><%= @user.fullname %></span>
   </div>
   <div class="stats flex">
+    <span>
+      <p><%= @user.opinions.length %></p>
+      <p>reviews</p>
+    </span>
     <span>
       <p><%= @followed_by.length %></p>
       <p>followers</p>
@@ -22,12 +28,11 @@
         <div class="container  px-0">
           <div class="d-flex p-1 mx-2">
             <div class="center_who_img">
-              <%#= check_for_avatar(usr) %>
+              <%= check_for_avatar(usr) %>
             </div>
             <div>
                 <p class="px-2 mb-0">
-                  <%= usr.username %>
-                  <%#= link_to usr.username, user_path(usr.id), class:'who_follow_link' %>
+                  <%= link_to usr.username, user_path(usr.id), class:'who_follow_link' %>
                 </p>
             </div>
           </div>

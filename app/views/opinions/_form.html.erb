@@ -1,3 +1,4 @@
+<div class="form-padding">
 <%= form_for @opinion do |f| %>
   <ul>
   <% @opinion.errors.full_messages.each do |error| %>
@@ -11,3 +12,4 @@
   </div>
   <%= f.submit 'Create Review', class: 'btn btn-secondary' %>
 <% end %>
+</div>
