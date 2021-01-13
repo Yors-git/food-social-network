@@ -35,4 +35,11 @@ module ApplicationHelper
       end
     end
   end
+
+  def show_messages
+    result = ''
+    result += "<div class='notice'><p> #{notice} </p></div>" if notice.present?
+    result += "<div class='notice'><p> #{alert} </p></div>" if alert.present?
+    result.html_safe
+  end
 end
