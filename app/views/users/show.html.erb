@@ -1,7 +1,4 @@
 <%= render 'user_right_panel' %>
-<%= show_background_image %>
-  <%#= check_coverimage(@user) %>
-
-
+<%= show_background_image(@user) %>
 <h1 class="title-padding"><%= @user.username %>'s Profile</h1>
 <%= render 'opinions/latest_reviews' %>

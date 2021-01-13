@@ -25,4 +25,6 @@ module ApplicationHelper
         content_tag(:li, sign_up, class: 'nav-item')
     end
   end
+
+  
 end

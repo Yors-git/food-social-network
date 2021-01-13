@@ -1,5 +1,5 @@
 module OpinionsHelper
-  def check_for_photo(opin)
+  def check_for_photo_op(opin)
     if opin.author.photo.attached?
       image_tag(url_for(opin.author.photo), alt:'user avatar', style:'height:60px')
     else

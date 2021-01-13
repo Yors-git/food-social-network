@@ -7,17 +7,14 @@ module UsersHelper
     end
   end
 
-  def check_coverimage(user)
-    if user.photo.attached?
-      cl_image_tag(url_for(user.coverimage), alt:'user cover image')
+  def show_background_image(user)
+    if user.coverimage.attached?
+      url = "url('https://res.cloudinary.com/dzxasrolj/image/upload/v1610477078/" + "#{user.coverimage.key}')" 
+      content_tag(:div, '', class: 'cover-image', style: "background-image:#{url}")
     else
-      cl_image_tag(url_for('https://res.cloudinary.com/dzxasrolj/image/upload/v1610477078/burger_v84wnz.png'), alt:'user cover image')
+      url1 = "url('https://res.cloudinary.com/dzxasrolj/image/upload/v1610556116/vinicius-amnx-amano-DL4OseW7WD8-unsplash_sh0lyz.jpg')"
+      content_tag(:div, '', class: 'cover-image', style: "background-image:#{url1}")
     end
-  end
-
-  def show_background_image
-    url = "url('https://res.cloudinary.com/dzxasrolj/image/upload/v1610477078/" + "#{@user.coverimage.key}')" 
-    content_tag(:div, '', class: 'cover-image', style: "background-image:#{url}")
   end
 end
 
