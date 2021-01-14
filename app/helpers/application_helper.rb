@@ -42,4 +42,10 @@ module ApplicationHelper
     result += "<div class='notice'><p> #{alert} </p></div>" if alert.present?
     result.html_safe
   end
+
+  def show_profile_link
+    if current_user
+      link_to 'Your profile', "/users/#{current_user.id}"
+    end
+  end
 end
