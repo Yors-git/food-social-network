@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { 
+  let(:user) do
     User.create(
-      username: 'rspec', 
-      fullname: 'rspec test', 
+      username: 'rspec',
+      fullname: 'rspec test',
       photo: Rack::Test::UploadedFile.new('spec/support/test_image.png', 'image/png'),
       coverimage: Rack::Test::UploadedFile.new('spec/support/test_image.png', 'image/png')
-    ) 
-  }
+    )
+  end
   let(:inv_user) { User.create(username: '', fullname: 'rspec test', photo: '', coverimage: '') }
   let(:inv_user1) { User.create(username: 'rspec', fullname: '', photo: '', coverimage: '') }
   let(:opinions) { User.reflect_on_association(:opinions).macro }

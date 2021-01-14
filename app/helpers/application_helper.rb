@@ -44,8 +44,6 @@ module ApplicationHelper
   end
 
   def show_profile_link
-    if current_user
-      link_to 'Your profile', "/users/#{current_user.id}"
-    end
+    link_to 'Your profile', "/users/#{current_user.id}" if current_user
   end
 end
