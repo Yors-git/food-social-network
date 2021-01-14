@@ -3,7 +3,7 @@ class OpinionsController < ApplicationController
   before_action :set_opinion, only: %i[show edit update destroy]
   def index
     @opinions = Opinion.all.order('created_at DESC')
-    @opinion = Opinion.new
+    @opinion = Opinion.includes(:not_followed_users).new
     @not_followed_users = @opinion.not_followed_users(current_user).order('created_at DESC')
   end
 
