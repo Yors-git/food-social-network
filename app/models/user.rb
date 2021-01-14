@@ -9,7 +9,6 @@ class User < ApplicationRecord
 
   validates :username, presence: true, length: { minimum: 3 }, uniqueness: true
   validates :fullname, presence: true, length: { minimum: 5 }
-  validates :password, presence: true
 
   def followed_by(user)
     followed_by_ids = user.followers.all.map { |fllr| fllr.follower_id if fllr.user_id == user.id }
