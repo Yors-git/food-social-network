@@ -1,0 +1,19 @@
+<div class="log-sign-padding">
+<h1>Users</h1>
+<ul class="opinions-feed">
+  <% @users.each do |usr| %>
+    <li class="container mt-3 px-0">
+      <div class="d-flex border p-1">
+        <div class="center_op_img">
+          <%= check_profile_photo(usr) %>
+        </div>
+        <div>
+          <h4 class="px-2 mt-3">
+            <%= link_to usr.username, user_path(usr.id), class: 'op_user_link' %>
+          </h4>
+        </div>
+      </div>
+    </li>
+    <% end %>
+</ul>
+</div>

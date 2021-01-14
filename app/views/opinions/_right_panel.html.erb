@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag 'homepage_styles' %>
+
+<div class="right-panel">
+  <h3>Who to follow:</h3>
+  <ul class="opinions-feed">
+    <% @not_followed_users.each do |usr| %>
+      <li>
+        <div class="container  px-0">
+          <div class="d-flex p-1 mx-2">
+            <div class="center_who_img">
+              <%= check_for_avatar(usr) %>
+            </div>
+            <div>
+                <p class="px-2 mb-0">
+                  <%= link_to usr.username, user_path(usr.id), class:'who_follow_link' %>
+                </p>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

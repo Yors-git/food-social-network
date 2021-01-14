@@ -1,0 +1,109 @@
+/* Style nav  */
+nav {
+  margin-left: 190px; /* Same as the width of the sidebar */
+  padding: 0;
+  background-color: rgb(77, 166, 224);
+}
+
+nav ul li a {
+  color: rgb(32, 51, 69);
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+nav ul li a:hover {
+  color: #f1f1f1;
+}
+
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 190px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: rgb(32, 51, 69); /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Profile Picture, Name, Stats  */
+.flex {
+  display: flex;
+}
+
+.current-user {
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.current-user img {
+  border-radius: 0.1rem;
+  height: 3.125rem;
+}
+
+.center_prof_img {
+  width: 3.125rem;
+}
+
+.current-user span {
+  white-space: nowrap;
+  overflow: hidden;
+  color: rgb(32, 51, 69);
+}
+
+.stats {
+  color: rgb(32, 51, 69);
+  justify-content: space-evenly;
+  padding: 1rem 0;
+}
+
+.stats span p {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* Style main container */
+.main {
+  margin-left: 190px;
+  margin-right: 260px;
+  padding: 0;
+}
+
+.title-padding {
+  padding: 1rem 0 0 1rem;
+}
+
+.form-padding {
+  padding: 0 1rem;
+}
+
+.log-sign-padding {
+  padding: 1rem;
+}
+
+.cover-image {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.fllw-btn {
+  padding: 1rem 1rem 0 1rem;
+  display: flex;
+  justify-content: center;
+}
