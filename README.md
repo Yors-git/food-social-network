@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-https://fathomless-citadel-51226.herokuapp.com/users/sign_in
+https://obscure-cove-39211.herokuapp.com/login
 
 ### Prerequisites
 
