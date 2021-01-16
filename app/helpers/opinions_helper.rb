@@ -16,4 +16,47 @@ module OpinionsHelper
                 alt: 'user avatar', style: 'height:30px')
     end
   end
+
+  def show_each_opinion(opinions)
+    opinions.each do |op|
+      concat(content_tag(:li) do 
+        concat(content_tag(:div, class:'container mt-3 px-0') do
+          concat(content_tag(:div, class:'d-flex border p-3 my-1') do 
+            concat(content_tag(:div, check_for_photo_op(op), class:'center_op_img'))
+        
+            concat(
+              content_tag(:div) do
+                concat(
+                  content_tag(:div) do
+                    content_tag(:h4, class:'px-2') do 
+                      concat(link_to op.author.username, user_path(op.author.id), class: 'op_user_link', class:'op_user_link')
+                    end
+                  end
+                )
+                concat(content_tag(:p, op.text, class:'px-2 mb-0'))
+              end
+            )
+          end)
+        end)
+      end)
+    end
+  end
+
+  def show_not_followed(not_followed_users)
+    @not_followed_users.each do |usr|
+      concat(content_tag(:li) do
+        concat(content_tag(:div, class:'container px-0') do
+          concat(content_tag(:div, class:'d-flex p-1 mx-2') do
+            concat(content_tag(:div, check_for_avatar(usr),class:'center_who_img'))
+            
+            concat(
+              content_tag(:p, class:'px-2 mb-0') do 
+                concat(link_to usr.username, user_path(usr.id), class:'who_follow_link')
+              end
+            )
+          end)
+        end)
+      end)
+    end
+  end
 end
