@@ -19,7 +19,7 @@ class OpinionsController < ApplicationController
         format.html { redirect_to root_path, notice: 'Opinion was successfully created.' }
         format.json { render :show, status: :created, location: @opinion }
       else
-        format.html { render :new }
+        format.html { redirect_to root_path, notice: 'Opinion can\'t be empty.' }
         format.json { render json: @opinion.errors, status: :unprocessable_entity }
       end
     end
