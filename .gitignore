@@ -42,5 +42,7 @@ yarn-debug.log*
 
 # Ignore application configuration
 /config/application.yml
+/config/env_vars.rb
 
 .DS_Store
+
