@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
+      flash.notice = "Please enter a valid user or sign up"
       redirect_to '/login'
     end
   end
