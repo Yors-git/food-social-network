@@ -45,7 +45,7 @@ Postgres: >=9.5
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/Yors-git/food-social-network/issues).
 
 ## Show your support
 
