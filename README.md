@@ -19,19 +19,29 @@ https://obscure-cove-39211.herokuapp.com/login
 
 ### Prerequisites
 
-Ruby: 2.7.2
-Rails: 6.0.3.4
-Postgres: >=9.5
+- Ruby: 2.7.2
+- Rails: 6.0.3.4
+- Postgres: >=9.5
 
 ### Instructions To Setup Application
 
 1. - Run `git clone git@github.com:Yors-git/food-social-network.git` to download 
-4. - Run `bundle install` to install Ruby Gems
-6. - Run `rails db:create` to create a local database
-7. - Run `rails db:migrate` to migrate the database
-8. - Run `rails s`
-8. - Run `http://localhost:3000/` in your browser to start the application
+2. - Run `bundle install` to install Ruby Gems
+3. - Run `rails db:create` to create a local database
+4. - Run `rails db:migrate` to migrate the database
+5. - Run `rails s`
+6. - Run `http://localhost:3000/` in your browser to start the application
 
+
+### Instructions To Run Tests
+### (after step 4 of setup instructions, do the following)
+
+1. - cd into the project folder
+2. - Run `rspec` command and you should see the output on the terminal
+
+### If Capybara tests doesn't run, be sure to set up your enviroment to run them, check out:
+
+- (https://www.codewithjason.com/rails-testing-hello-world-using-rspec-capybara/)
 
 ## Author:
 
