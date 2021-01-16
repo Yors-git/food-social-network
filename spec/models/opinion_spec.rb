@@ -22,4 +22,16 @@ RSpec.describe Opinion, type: :model do
   describe 'associations' do
     it { should belong_to(:author).class_name('User').with_foreign_key('author_id') }
   end
+
+  describe '#not_followed_users' do
+    subject { opinion.not_followed_users(*arguments) }
+  
+    context 'when no followers' do
+      let(:arguments) { user1 }
+  
+      it 'should return empty array' do
+        is_expected.to exist
+      end
+    end
+  end
 end
