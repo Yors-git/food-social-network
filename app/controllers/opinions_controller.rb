@@ -1,6 +1,6 @@
 class OpinionsController < ApplicationController
   include ApplicationHelper
-  before_action :set_opinion, only: %i[show edit update destroy]
+  
   def index
     @opinions = Opinion.all.order('created_at DESC')
     @opinion = Opinion.includes(:not_followed_users).new
@@ -24,14 +24,6 @@ class OpinionsController < ApplicationController
       end
     end
   end
-
-  def show; end
-
-  def edit; end
-
-  def update; end
-
-  def destroy; end
 
   private
 

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show destroy create_follower delete_follower]
-  before_action :set_opinions, only: %i[show destroy]
+  before_action :set_user, only: %i[show create_follower delete_follower]
+  before_action :set_opinions, only: %i[show]
   skip_before_action :require_login, only: %i[new create]
 
   def index
@@ -26,12 +26,6 @@ class UsersController < ApplicationController
     @user = User.includes(:followers).find(params[:id])
     @followed_by = @user.followed_by(@user)
   end
-
-  def edit; end
-
-  def update; end
-
-  def destroy; end
 
   def create_follower
     @create_follower = @user.create_follower(@user, current_user)
