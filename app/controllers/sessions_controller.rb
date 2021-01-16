@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create destroy]
- 
+
   def create
     @user = User.find_by(username: params[:username])
     if @user

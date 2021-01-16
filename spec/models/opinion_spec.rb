@@ -25,10 +25,10 @@ RSpec.describe Opinion, type: :model do
 
   describe '#not_followed_users' do
     subject { opinion.not_followed_users(*arguments) }
-  
+
     context 'when no followers' do
       let(:arguments) { user1 }
-  
+
       it 'should return empty array' do
         is_expected.to exist
       end

@@ -29,9 +29,9 @@ gem 'cloudinary'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'rspec-rails'
-  gem 'capybara'
   gem 'webdrivers'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -52,7 +52,6 @@ group :test do
   gem 'rspec'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
   gem 'shoulda-matchers', '~> 4.0'
 end
 

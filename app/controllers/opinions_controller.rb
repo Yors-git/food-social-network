@@ -1,6 +1,6 @@
 class OpinionsController < ApplicationController
   include ApplicationHelper
-  
+
   def index
     @opinions = Opinion.all.order('created_at DESC')
     @opinion = Opinion.includes(:not_followed_users).new
