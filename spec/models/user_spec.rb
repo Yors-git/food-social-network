@@ -28,15 +28,9 @@ RSpec.describe User, type: :model do
     expect(inv_user).to_not be_valid
   end
 
-  it 'check correct association between opinions and user' do
-    expect(opinions).to eq(:has_many)
-  end
-
-  it 'check correct association between followers and user' do
-    expect(followers).to eq(:has_many)
-  end
-
-  it 'check correct association between inverse_followers and user ' do
-    expect(inverse_followers).to eq(:has_many)
+  describe 'associations' do
+    it { should have_many(:opinions).class_name('Opinion').with_foreign_key('author_id') }
+    it { should have_many(:followers).class_name('Followship').with_foreign_key('user_id') }
+    it { should have_many(:inverse_followers).class_name('Followship').with_foreign_key('follower_id') }
   end
 end

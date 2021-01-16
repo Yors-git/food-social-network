@@ -19,7 +19,7 @@ RSpec.describe Opinion, type: :model do
     expect(inv_opinion1).to_not be_valid
   end
 
-  it 'check correct association between user and post' do
-    expect(author).to eq(:belongs_to)
+  describe 'associations' do
+    it { should belong_to(:author).class_name('User').with_foreign_key('author_id') }
   end
 end
