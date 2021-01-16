@@ -21,12 +21,12 @@ module UsersHelper
   def show_followed_by(followed_by)
     followed_by.each do |usr|
       concat(content_tag(:li) do
-        concat(content_tag(:div, class:'container px-0') do
-          concat(content_tag(:div, class:'d-flex p-1 mx-2') do
-            concat(content_tag(:div, check_for_avatar(usr),class:'center_who_img'))
+        concat(content_tag(:div, class: 'container px-0') do
+          concat(content_tag(:div, class: 'd-flex p-1 mx-2') do
+            concat(content_tag(:div, check_for_avatar(usr), class: 'center_who_img'))
             concat(
-              content_tag(:p, class:'px-2 mb-0') do 
-                concat(link_to usr.username, user_path(usr.id), class:'who_follow_link')
+              content_tag(:p, class: 'px-2 mb-0') do
+                concat(link_to(usr.username, user_path(usr.id), class: 'who_follow_link'))
               end
             )
           end)
@@ -35,14 +35,14 @@ module UsersHelper
     end
   end
 
-  def show_all_users(users)
+  def show_all_users(_users)
     @users.each do |usr|
-      concat(content_tag(:li, class:'container mt-3 px-0') do
-        concat(content_tag(:div, class:'d-flex border p-1') do
-          concat(content_tag(:div, check_profile_photo(usr), class:'center_op_img'))
+      concat(content_tag(:li, class: 'container mt-3 px-0') do
+        concat(content_tag(:div, class: 'd-flex border p-1') do
+          concat(content_tag(:div, check_profile_photo(usr), class: 'center_op_img'))
           concat(
-            content_tag(:h4, class:'px-2 mt-3') do
-              concat(link_to usr.username, user_path(usr.id), class: 'op_user_link')
+            content_tag(:h4, class: 'px-2 mt-3') do
+              concat(link_to(usr.username, user_path(usr.id), class: 'op_user_link'))
             end
           )
         end)
