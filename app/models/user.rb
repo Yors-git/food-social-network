@@ -20,4 +20,13 @@ class User < ApplicationRecord
     followed_users_ids << user.id
     User.where.not(id: followed_users_ids)
   end
+
+  def create_follower(user, current_user)
+    Followship.create(user_id: user.id, follower_id: current_user.id, blocked: false)
+  end
+
+  def delete_follower(user, current_user)
+    @followship = Followship.where(follower_id: current_user.id, user_id: user.id)
+    Followship.delete(@followship.first.id)
+  end
 end

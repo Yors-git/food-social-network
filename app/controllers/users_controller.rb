@@ -34,13 +34,12 @@ class UsersController < ApplicationController
   def destroy; end
 
   def create_follower
-    Followship.create(user_id: @user.id, follower_id: current_user.id, blocked: false)
+    @create_follower = @user.create_follower(@user, current_user)
     redirect_to request.referrer, notice: 'Followed!'
   end
 
   def delete_follower
-    @followship = Followship.where(follower_id: current_user.id, user_id: @user.id)
-    Followship.delete(@followship.first.id)
+    @delete_follower = @user.delete_follower(@user, current_user)
     redirect_to request.referrer, notice: 'Unfollowed!'
   end
 
