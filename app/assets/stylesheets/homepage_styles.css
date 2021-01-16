@@ -1,0 +1,56 @@
+.opinions-feed {
+  list-style: none;
+  padding-left: 0;
+}
+
+.center_op_img {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.op_user_link {
+  text-decoration: none;
+  color: rgb(32, 51, 69);
+}
+
+.op_user_link:hover {
+  text-decoration: none;
+  color: #818181;
+}
+
+.right-panel {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 260px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 3.625rem; /* Stay at the top */
+  right: 0;
+  background-color: rgb(245, 246, 248);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.right-panel h3 {
+  padding: 6px 8px 6px 16px;
+}
+
+.who_follow_link {
+  padding: 0;
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: rgb(32, 51, 69);
+  display: block;
+}
+
+.who_follow_link:hover {
+  color: #818181;
+}
+
+.center_who_img {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,24 @@
+development:
+  cloud_name: dzxasrolj
+  api_key: '718438238946811'
+  api_secret: HE9DZ6VvIV3C0ZSdbbmkmyknkC8
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dzxasrolj
+  api_key: '718438238946811'
+  api_secret: HE9DZ6VvIV3C0ZSdbbmkmyknkC8
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dzxasrolj
+  api_key: '718438238946811'
+  api_secret: HE9DZ6VvIV3C0ZSdbbmkmyknkC8
+  enhance_image_tag: true
+  static_file_support: false
+
+cloud_name: dzxasrolj
+api_key: '718438238946811'
+api_secret: HE9DZ6VvIV3C0ZSdbbmkmyknkC8
+enhance_image_tag: true
+static_file_support: false

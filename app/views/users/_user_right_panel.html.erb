@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag 'homepage_styles' %>
+
+<div class="right-panel">
+  <div class="current-user flex">
+    <div class="center_prof_img">
+      <%= check_profile_photo(@user)%>
+    </div>
+    <span><%= @user.fullname %></span>
+  </div>
+  <div class="fllw-btn">
+    <%= follow_user(@user, @followed_by) %>
+  </div>
+  <div class="stats flex">
+    <span>
+      <p><%= @user.opinions.length %></p>
+      <p>reviews</p>
+    </span>
+    <span>
+      <p><%= @followed_by.length %></p>
+      <p>followers</p>
+    </span>
+    <span>
+      <p><%= @user.inverse_followers.length %></p>
+      <p>following</p>
+    </span>
+  </div>
+  <h3>Followed by:</h3>
+  <ul class="opinions-feed">
+    <% show_followed_by(@followed_by) %>
+  </ul>
+</div>
